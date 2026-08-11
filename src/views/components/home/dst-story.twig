@@ -1,0 +1,23 @@
+<section class="dst-section dst-story" aria-labelledby="dst-story-title">
+    <div class="container">
+        <div class="dst-story__grid">
+            <div class="dst-story__copy">
+                <p class="dst-kicker">{{ trans('dst.story_eyebrow') }}</p>
+                <h2 id="dst-story-title">{{ trans('dst.story_title') }}</h2>
+                <p>{{ trans('dst.story_body') }}</p>
+                <a href="{{ link('categories') }}" class="dst-text-link">
+                    {{ trans('dst.story_cta') }}
+                    <span aria-hidden="true">&larr;</span>
+                </a>
+            </div>
+            <div class="dst-story__visual" aria-hidden="true">
+                <span class="dst-story__orbit"></span>
+                <div class="dst-story__depth">
+                    <strong>430m</strong>
+                    <span>{{ trans('dst.story_depth') }}</span>
+                </div>
+                <p>{{ trans('dst.story_location') }}</p>
+            </div>
+        </div>
+    </div>
+</section>

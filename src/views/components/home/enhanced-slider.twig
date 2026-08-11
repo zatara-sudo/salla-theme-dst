@@ -8,43 +8,51 @@
 | component.slides               | object[] | list of slides                                                               |
 | position                       | int      | Sorting number start from zero                                               |
 #}
-<section data-testid="store-home-slider" class="s-block s-block--hero-slider s-block--full-bg wide-placeholder"> 
-    <salla-slider 
+<section data-testid="store-home-slider" class="s-block s-block--hero-slider s-block--full-bg wide-placeholder dst-hero">
+    <salla-slider
       id="main-slider-{{ position }}"
-      auto-play
       static-when-single
       slider-config='{"lazy":"false"}'
-      {{ component.slides|length > 1 ? '' : 'show-controls="false"' }}
+      show-controls="false"
       type="fullwidth">
         <div slot="items">
             {% for slide in component.slides %}
-                <div class="swiper-slide w-full min-h-[420px] lg:min-h-[620px] bg-dark relative">
-                    {% if '.mp4' in slide.image %}
-                        <div class="absolute inset-0 overflow-hidden {{ slide.without_overlay ? '' : 'overlay-bg' }}">
+                {% if loop.first %}
+                    {% set hero_poster = 'images/dst-hero-poster.jpg' | asset %}
+                    <div class="swiper-slide w-full min-h-[560px] lg:min-h-[700px] bg-dark relative">
+                        <div style="background-image: url('{{ hero_poster }}');" class="dst-hero-media absolute inset-0 overflow-hidden overlay-bg">
                             <video class="dst-hero-video absolute inset-0 w-full h-full object-cover"
-                                   muted loop playsinline preload="metadata"
-                                   poster="{{ 'images/dst-hero-poster.jpg' | asset }}">
-                                <source src="{{ slide.image }}" type="video/mp4">
+                                   autoplay muted loop playsinline preload="metadata"
+                                   poster="{{ hero_poster }}" aria-hidden="true">
+                                <source src="{{ 'videos/dst-hero.mp4' | asset }}" type="video/mp4">
                             </video>
                         </div>
-                    {% else %}
-                        <div style="background-image: url({{ slide.image }});" class="{{ slide.without_overlay ? '' : 'overlay-bg' }} bg-cover bg-center absolute inset-0"></div>
-                    {% endif %}
-                    <div class="flex-center container pb-16 sm:pb-0 home-slider__content relative h-full">
-                        <div class="w-5/6 text-center md:w-8/12 lg:w-6/12 text-white">
-                            {% if loop.first %}
+                        <div class="flex-center container home-slider__content relative h-full">
+                            <div class="w-full max-w-3xl text-center text-white dst-hero-copy">
                                 <p data-swiper-parallax="-600" class="dst-hero-eyebrow">{{ trans('dst.hero_eyebrow') }}</p>
-                            {% endif %}
-                            <h2 data-swiper-parallax="-500" class="dst-hero-title lg:text-title-size font-bold leading-tight mb-4">{{ slide.title }}</h2>
-                            <p data-swiper-parallax="-300" class="line-clamp-2 description">{{ slide.description }}</p>
-                            {% if loop.first %}
+                                <h2 data-swiper-parallax="-500" class="dst-hero-title font-bold leading-tight">{{ trans('dst.hero_title') }}</h2>
+                                <p data-swiper-parallax="-300" class="dst-hero-description">{{ trans('dst.hero_description') }}</p>
                                 <a data-swiper-parallax="-200" href="{{ link('categories') }}" class="dst-hero-cta">{{ trans('dst.hero_cta') }}</a>
                                 <p class="dst-hero-trust">{{ trans('dst.hero_trust') }}</p>
-                            {% endif %}
+                                <div class="dst-hero-stats" aria-label="{{ trans('dst.hero_facts') }}">
+                                    <div class="dst-hero-stat">
+                                        <strong>430m</strong>
+                                        <span>{{ trans('dst.stat_depth') }}</span>
+                                    </div>
+                                    <div class="dst-hero-stat">
+                                        <strong>21</strong>
+                                        <span>{{ trans('dst.stat_minerals') }}</span>
+                                    </div>
+                                    <div class="dst-hero-stat">
+                                        <strong>30+</strong>
+                                        <span>{{ trans('dst.stat_years') }}</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endif %}
             {% endfor %}
         </div>
     </salla-slider>
-</section> 
+</section>
