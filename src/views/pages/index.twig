@@ -8,6 +8,9 @@
 {% extends "layouts.master" %}
 {% block content %}
     {% component home %}
+    {% include 'components.home.dst-story' %}
+    {% include 'components.home.dst-promises' %}
+    {% include 'components.home.dst-faq' %}
 {% endblock %}
 {% block scripts %}
     <script defer src="{{ 'home.js' | asset }}"></script>
