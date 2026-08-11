@@ -1,11 +1,11 @@
 {
-  "name": "theme-raed",
+  "name": "salla-theme-dst",
   "version": "1.358.0",
-  "description": "Salla Theme",
+  "description": "Dead Sea Treasures \u2014 custom Salla Twilight theme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SallaApp/theme-raed.git"
+    "url": "git+https://github.com/zatara-sudo/salla-theme-dst.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,7 @@
     "development": "webpack --mode development",
     "watch": "webpack --mode development --watch"
   },
-  "author": "Salla",
+  "author": "Dead Sea Treasures",
   "dependencies": {
     "@babel/runtime": "^8.0.0",
     "animejs": "^3.2.2",
