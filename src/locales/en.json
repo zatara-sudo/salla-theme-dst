@@ -1,0 +1,35 @@
+{
+  "blocks": {
+    "header": {
+      "cart": "Cart"
+    },
+    "appBanner": {
+      "download_now": "download now"
+    }
+  },
+  "pages": {
+    "cart": {
+      "cart_options": "Cart Options"
+    },
+    "order": {
+      "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
+      "edit_period_ended": "The period to edit the review has ended",
+      "delete_period_ended": "The period to delete the review has ended",
+      "days_since_added": "days since it was added",
+      "option_name": "Option name",
+      "option_content": "Content"
+    }
+  },
+  "common": {
+    "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
+    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
+  },
+  "dst": {
+    "hero_eyebrow": "JORDAN · SINCE 1995",
+    "hero_cta": "Shop Now",
+    "hero_trust": "Est. 1995 · Authentic, direct from the source",
+    "bar_1": "Authentic Dead Sea minerals from Jordan",
+    "bar_2": "Every batch lab-tested",
+    "bar_3": "Shipped direct from the source since 1995"
+  }
+}

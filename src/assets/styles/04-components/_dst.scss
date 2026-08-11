@@ -1,0 +1,60 @@
+/* Dead Sea Treasures — brand layer (mirrors Shopify theme) */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Almarai:wght@300;400;700&display=swap');
+
+:root {
+  --dst-gold: #b89030;
+  --dst-dark: #0a1f1e;
+  --dst-bg: #f8f8f7;
+}
+
+body { font-family: 'Almarai', var(--font-main), sans-serif; background-color: var(--dst-bg); }
+h1, h2, h3, .s-block__title h2 { font-family: 'Amiri', serif; }
+
+/* Announcement bar */
+.dst-announcement {
+  background: var(--dst-dark);
+  color: #f8f8f7;
+  font-size: 13px;
+  overflow: hidden;
+  .dst-announcement__track {
+    display: flex; gap: 14px; align-items: center; justify-content: center;
+    padding: 8px 16px; white-space: nowrap;
+    @media (max-width: 640px) {
+      width: max-content;
+      animation: dst-marquee 18s linear infinite;
+    }
+  }
+  .dst-announcement__dot { color: var(--dst-gold); }
+}
+@keyframes dst-marquee {
+  0% { transform: translateX(50vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Hero */
+.dst-hero-eyebrow {
+  letter-spacing: .25em; font-size: 12px; text-transform: uppercase;
+  color: var(--dst-gold); margin-bottom: 12px; font-weight: 700;
+}
+.dst-hero-title { font-family: 'Amiri', serif; font-size: clamp(28px, 5vw, 56px); }
+.dst-hero-cta {
+  display: inline-block; margin-top: 20px; padding: 12px 40px;
+  background: var(--dst-gold); color: #fff; font-weight: 700; border-radius: 2px;
+  transition: background .2s ease;
+  &:hover { background: #a37f28; color: #fff; }
+}
+.dst-hero-trust { margin-top: 14px; font-size: 12px; opacity: .85; }
+
+/* Product cards */
+.s-product-card-entry {
+  border: 1px solid #ececea; border-radius: 6px; background: #fff;
+  transition: box-shadow .25s ease, transform .25s ease;
+  &:hover { box-shadow: 0 12px 30px rgba(10, 31, 30, .10); transform: translateY(-3px); }
+}
+.s-product-card-content-title a:hover { color: var(--color-primary); }
+.s-button-primary, .s-button-main {
+  border-radius: 3px;
+}
+
+/* Section titles centered like Shopify */
+.s-block__title { h2 { position: relative; } }
